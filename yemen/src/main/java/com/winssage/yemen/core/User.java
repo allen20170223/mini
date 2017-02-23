@@ -6,6 +6,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;  
 
+/**
+ * 用户信息表
+ * @author lenovo
+ *
+ */
 @Entity
 @Table(name="sys_user")
 public class User {
