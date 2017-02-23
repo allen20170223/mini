@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Table(name="sys_user")
 public class User {
 	
-	private int id;  
+	private int id;   
 	private String name; 
 	private String loginName;
 	 
