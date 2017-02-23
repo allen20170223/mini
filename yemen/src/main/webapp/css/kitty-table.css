@@ -1,0 +1,39 @@
+/*!
+ * Kitty v1.0.0 
+ * Copyright 2016 Winssage Lab, Inc.
+ * No Licensed under MIT  
+ */
+.kitty-table{  
+	/*表格总宽度取决于外部div宽度*/
+	width: 100%;
+	border-collapse:collapse; 
+} 
+.kitty-table th{ 
+	/*设置表头边框颜色*/
+	border:solid 1px #C4C4C4;
+}
+.kitty-table tbody td{ 
+	/*设置表格边框颜色*/
+	border:solid 1px #DDD;
+}
+.kitty-table thead tr th{
+	white-space: nowrap;
+	color: #545454;
+	background: #E2E2E2;
+	padding: 7px 8px;
+	vertical-align: middle;
+	text-align: center;
+}
+.kitty-table tbody tr td{ 
+	color: #545454; 
+	padding: 7px 8px; 
+}
+/*表格页脚样式*/
+.kitty-table tfoot tr td{ 
+	padding: 10px 0px;
+}
+
+
+
+
+

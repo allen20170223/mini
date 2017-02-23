@@ -1,0 +1,57 @@
+body{
+	background-image: url(../../img/loginbg.jpg);
+	/*定义背景图像尺寸的宽度和高度*/
+	background-size: 1366px 768px;  
+	background-repeat: no-repeat;		
+}
+.header{
+	height: 120px; 
+	line-height:120px;  
+	text-align: center;
+	margin-top: 60px;
+}
+.header-title{ 
+	font-size: 40px; 
+	color: white; 
+}
+.login-box{ 
+	/*鍗婇�忔槑鑳屾櫙*/
+	background-color: rgba(245,245,245,0.3);
+	width: 570px;
+	margin: 0px auto; 
+	padding:19px;
+	text-align: center;
+	/*鍦嗚鏁堟灉*/	
+	border: 1px solid #e3e3e3;   
+    border-radius: 4px;
+}
+.red{
+	color: #b94846;
+}
+.login-button{ 
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer; 
+    font-size: 18px; 
+    text-align: center;
+    vertical-align: middle;  
+    background-color: #428bca;
+    border-color: #357ebd;
+    color: #fff; 
+    width: 190px;
+    height: 40px;    
+    transition-property:background-color;
+    transition-duration: 0.4s; 
+}
+.login-button:hover{
+	background-color: #3071a9; 
+}
+.alert-danger{
+	display: none;
+}
+.alert-warning{
+	display: none;;
+}
+.alert-info{
+	display: none;
+} 

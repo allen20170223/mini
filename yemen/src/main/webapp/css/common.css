@@ -1,0 +1,20 @@
+body { 
+	font-size: 15px; 
+	font-family: "微软雅黑";  
+}
+a {
+	/*a链接统一为无链接较麻烦*/
+	/*
+	text-decoration: none !important;
+	cursor: pointer;
+	color:black;
+	*/
+}
+.underline{
+	text-decoration: underline !important;	
+}
+.none-underline{
+	text-decoration: none !important;
+	cursor: pointer;
+	color:black;
+}

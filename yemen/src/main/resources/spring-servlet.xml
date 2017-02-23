@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd 
+              http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd 
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+ 
+	<!-- 扫描使用了注解的bean，将其设置为bean，避免web启动时controller注解不生效 --> 
+	<context:component-scan base-package="com.*" />   
+		
+	<!--使controller的mvc特性注解生效 -->
+	<mvc:annotation-driven />
+	
+	<!--web启动时使controller也实现切面织入 -->
+	<aop:aspectj-autoproxy/> 
+	
+	<!--处理对静态资源的请求，与普通jsp区分，资源默认在webapp目录下 -->
+	<mvc:resources mapping="/**" location="/" />	 
+	
+	<!--mvc视图解析 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+	p:prefix="/pages/" p:suffix=".jsp" /> 
+	
+	<!--文件上传的配置 -->  
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+		<property name="defaultEncoding" value="utf-8"></property> 
+		<property name="maxUploadSize" value="100000000" />
+		<property name="maxInMemorySize" value="10240" />
+	</bean>	
+
+	<!-- JSON转换器 -->
+	<bean id="mappingJackson2HttpMessageConverter"
+		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		<property name="supportedMediaTypes">
+			<list>
+				<value>text/html;charset=UTF-8</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 使跨域ajax访问生效 -->
+	<mvc:cors><mvc:mapping path="/**" /></mvc:cors>
+	
+</beans>
